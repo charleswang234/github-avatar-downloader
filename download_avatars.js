@@ -1,4 +1,10 @@
 var args = process.argv.slice(2, 4);
+
+if (args[0] === undefined) {
+  throw "You did not enter the repoOwner and repoName";
+} else if (args[1] === undefined) {
+  throw "You did not enter the repoName";
+}
 var request = require('request');
 var secret = require("./secrets.js");
 var fs = require('fs');
